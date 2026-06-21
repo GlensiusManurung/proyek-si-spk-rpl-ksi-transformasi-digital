@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         // Tambahkan middleware global
+        $middleware->append(\App\Http\Middleware\TrustProxies::class);
         $middleware->append(ResetOnlineStatus::class);
         $middleware->append(\App\Http\Middleware\CheckUserOnline::class);
          $middleware->alias([
