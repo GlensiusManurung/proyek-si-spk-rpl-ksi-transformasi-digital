@@ -25,14 +25,17 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     npm install && \
     npm run build
 
-# Laravel setup
-RUN cp .env.example .env || true
-RUN php artisan key:generate --force
+# Verifikasi manifest Vite terbuat
+RUN ls public/build/ && cat public/build/.vite/manifest.json | head -30
+
+# Laravel permission setup (JANGAN key:generate di sini)
 RUN chmod -R 775 storage bootstrap/cache
-RUN chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
 
 EXPOSE 10000
-CMD php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache && \
+
+# Jalankan semua saat container start, pakai Railway env vars
+CMD php artisan key:generate --force && \
+    php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan storage:link 2>/dev/null || true && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
