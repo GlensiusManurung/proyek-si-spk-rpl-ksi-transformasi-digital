@@ -1,0 +1,193 @@
+/* ============================================
+   PENGAJUAN - ADMINLTE SIMPLE STYLE
+   ============================================ */
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn {
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: #3c8dbc;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #367fa9;
+}
+
+.btn-warning {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background: #e08e0b;
+}
+
+.btn-danger {
+    background: #dd4b39;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #c13b2a;
+}
+
+.btn-success {
+    background: #00a65a;
+    border: none;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #008d4c;
+}
+
+.btn-info {
+    background: #00c0ef;
+    border: none;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #00acd6;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Badge status */
+.badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.badge-success {
+    background: #00a65a;
+    color: white;
+}
+
+.badge-danger {
+    background: #dd4b39;
+    color: white;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #f9f9f9;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 12px;
+    font-weight: 600;
+    color: #555;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Alert */
+.alert {
+    border-radius: 3px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.alert-danger {
+    background: #f2dede;
+    color: #a94442;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    color: #777;
+}
+
+.empty-state i {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+    }
+}

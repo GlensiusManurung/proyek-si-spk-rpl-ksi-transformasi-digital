@@ -1,0 +1,243 @@
+/* ============================================
+   RIWAYAT PENGIRIMAN - ADMINLTE STYLE
+   ============================================ */
+
+/* Info Box */
+.info-box {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.info-box h3 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.info-box p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.bg-blue {
+    background: #3c8dbc;
+    color: white;
+}
+
+.bg-green {
+    background: #00a65a;
+    color: white;
+}
+
+.bg-yellow {
+    background: #f39c12;
+    color: white;
+}
+
+/* Card */
+.card {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: none;
+    background: #fff;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #f9f9f9;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 12px;
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+}
+
+.table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* Button */
+.btn {
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-info {
+    background: #00c0ef;
+    border: none;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #00acd6;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Alert */
+.alert {
+    border-radius: 3px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+/* Badge */
+.badge-warning {
+    background: #f39c12;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.badge-info {
+    background: #00c0ef;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.badge-success {
+    background: #00a65a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+/* DataTables */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-left: 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #3c8dbc;
+    color: white !important;
+    border: none;
+}
+
+/* Pagination */
+.pagination {
+    margin: 0;
+}
+
+.pagination .page-link {
+    border-radius: 3px;
+    margin: 0 2px;
+    color: #555;
+}
+
+.pagination .active .page-link {
+    background: #3c8dbc;
+    border-color: #3c8dbc;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+    }
+    
+    .info-box {
+        margin-bottom: 15px;
+    }
+}
+
+/* Empty State */
+.text-center.py-5 {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.text-center.py-5 i {
+    font-size: 64px;
+    color: #ccc;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.text-center.py-5 p {
+    font-size: 16px;
+    color: #777;
+}

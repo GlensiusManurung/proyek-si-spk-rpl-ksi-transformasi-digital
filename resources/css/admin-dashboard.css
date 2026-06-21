@@ -1,0 +1,163 @@
+/* ============================================
+   DASHBOARD ADMIN - ADMINLTE STYLE
+   ============================================ */
+
+.content-wrapper-custom {
+    background-color: #f4f6f9;
+    padding: 20px 0.5rem;
+    min-height: 100vh;
+}
+
+/* Small Boxes */
+.small-box {
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.125), 0 1px 2px rgba(0,0,0,.2);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    color: #fff;
+}
+
+.small-box > .inner {
+    padding: 10px;
+}
+
+.small-box h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+}
+
+.small-box p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.small-box .icon {
+    color: rgba(0,0,0,.15);
+    z-index: 0;
+}
+
+.small-box .icon > i {
+    font-size: 70px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: transform .3s linear;
+}
+
+.small-box:hover .icon > i {
+    transform: scale(1.1);
+}
+
+.small-box > .small-box-footer {
+    background-color: rgba(0,0,0,.1);
+    color: rgba(255,255,255,.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.small-box > .small-box-footer:hover {
+    background-color: rgba(0,0,0,.15);
+    color: #fff;
+}
+
+/* Colors */
+.bg-info { background-color: #17a2b8 !important; }
+.bg-success { background-color: #28a745 !important; }
+.bg-warning { background-color: #ffc107 !important; color: #1f2d3d !important; }
+.bg-danger { background-color: #dc3545 !important; }
+
+/* Cards */
+.card-adminlte {
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+}
+
+.card-header-adminlte {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.card-solid-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-solid-primary .card-header-adminlte {
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+}
+
+.card-title-adminlte {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.card-tools .btn-tool {
+    background: transparent;
+    color: #adb5bd;
+    font-size: 0.875rem;
+    margin: -0.75rem 0;
+    padding: 0.25rem 0.5rem;
+    border: none;
+}
+
+.nav-pills-custom .nav-link {
+    padding: 0.2rem 0.8rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+
+.nav-pills-custom .nav-link.active {
+    background-color: #007bff;
+}
+
+/* Todo List */
+.todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-list > li {
+    border-radius: 2px;
+    background: #f8f9fa;
+    border-left: 2px solid #e9ecef;
+    color: #495057;
+    margin-bottom: 2px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .small-box h3 {
+        font-size: 1.5rem;
+    }
+    .small-box .icon > i {
+        font-size: 45px;
+        right: 10px;
+        top: 10px;
+    }
+}

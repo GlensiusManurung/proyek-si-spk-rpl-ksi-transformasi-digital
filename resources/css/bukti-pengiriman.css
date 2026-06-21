@@ -1,0 +1,138 @@
+/* ============================================
+   BUKTI PENGIRIMAN - SIMPLE STYLE
+   ============================================ */
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background: #3c8dbc;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.btn-primary:hover {
+    background: #367fa9;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.btn-info {
+    background: #00c0ef;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+.btn-danger {
+    background: #dd4b39;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #f9f9f9;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 12px;
+    font-weight: 600;
+    color: #555;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    color: #777;
+}
+
+.empty-state i {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.bukti-image {
+    max-width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.bukti-image:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+    }
+}

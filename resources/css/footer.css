@@ -1,0 +1,277 @@
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 80px 0 0 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Animasi morph */
+.animate-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: morphIn 0.6s ease forwards;
+}
+
+@keyframes morphIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay animasi untuk setiap kolom */
+.footer-left {
+    animation-delay: 0.1s;
+}
+
+.footer-center {
+    animation-delay: 0.3s;
+}
+
+.footer-right {
+    animation-delay: 0.5s;
+}
+
+.footer-bottom {
+    animation-delay: 0.7s;
+}
+
+/* Kiri - Perusahaan */
+.footer-left {
+    flex: 1.4;
+    min-width: 280px;
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.company-tagline {
+    font-size: 13px;
+    color: #1E40AF;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.company-desc {
+    font-size: 13px;
+    color: #1F2937;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    font-size: 13px;
+    color: #374151;
+}
+
+/* Tengah */
+.footer-center {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.follow-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #1E3A8A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links div {
+    color: #2563EB;
+    font-size: 13px;
+}
+
+.subsidiaries-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #1E3A8A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subsidiaries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subsidiaries-list div {
+    font-size: 13px;
+    color: #374151;
+}
+
+/* Kanan - Maps */
+.footer-right {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.maps-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1E3A8A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.maps-section iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.location-detail {
+    margin-bottom: 12px;
+}
+
+.location-address {
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.map-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.map-links div {
+    color: #2563EB;
+    font-size: 12px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 50px;
+    padding: 96px 0;
+}
+
+.footer-bottom-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom-container div {
+    font-size: 12px;
+    color: #4B5563;
+}
+
+.bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.bottom-links div {
+    color: #2563EB;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .footer {
+        padding: 60px 0 0 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+    }
+    
+    .footer-center {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bottom-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 40px 0 0 0;
+    }
+    
+    .footer-container {
+        padding: 0 20px;
+    }
+    
+    .footer-center {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-bottom-container {
+        padding: 0 20px;
+    }
+    
+    .company-name {
+        font-size: 18px;
+    }
+    
+    .maps-section iframe {
+        height: 160px;
+    }
+}

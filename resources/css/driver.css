@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+}
+
+/* ==================== APP WRAPPER ==================== */
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==================== SIDEBAR ==================== */
+.app-sidebar {
+    width: 280px;
+    background: #0b2b5c;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.app-sidebar.collapsed {
+    margin-left: -280px;
+}
+
+.sidebar-brand {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 20px;
+}
+
+.brand-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.sidebar-wrapper {
+    padding: 0 0 20px 0;
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+}
+
+.sidebar-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-wrapper::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+
+.nav-sidebar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-sidebar .nav-item {
+    margin-bottom: 5px;
+}
+
+.nav-sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-sidebar .nav-link.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-left: 3px solid white;
+}
+
+.nav-sidebar .nav-link i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.nav-header {
+    padding: 12px 24px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.app-main {
+    margin-left: 280px;
+    padding: 20px;
+    flex: 1;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.app-main.expanded {
+    margin-left: 0;
+}
+
+/* ==================== NAVBAR ==================== */
+.app-header {
+    background: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #28a745;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    min-width: 180px;
+    display: none;
+    list-style: none;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #4a5568;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f7fafc;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #2d3748;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.85rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40,167,69,0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #28a745;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #218838;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+}
+
+/* Toggle Button */
+#sidebarToggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4a5568;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table th {
+    background: #f7fafc;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-sidebar {
+        margin-left: -280px;
+    }
+    .app-sidebar.open {
+        margin-left: 0;
+    }
+    .app-main {
+        margin-left: 0;
+    }
+}
+
+
+/* =========================
+TABLET
+========================= */
+@media (max-width: 992px){
+
+.app-sidebar{
+width:240px;
+}
+
+.app-main{
+margin-left:240px;
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+@media (max-width: 768px){
+
+/* SIDEBAR */
+.app-sidebar{
+margin-left:-280px;
+width:280px;
+}
+
+.app-sidebar.open{
+margin-left:0;
+}
+
+/* MAIN */
+.app-main{
+margin-left:0 !important;
+padding:15px;
+}
+
+/* HEADER */
+
+
+/* NAVBAR */
+.navbar-nav{
+display:flex;
+align-items:center;
+gap:15px;
+
+list-style:none;
+padding:0;
+margin:0;
+
+flex-wrap:wrap;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+position:absolute;
+top:110%;
+right:0;
+
+background:white;
+
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+min-width:220px;
+max-width:90vw;
+
+display:none;
+
+list-style:none;
+padding:8px 0;
+
+z-index:9999;
+
+overflow:hidden;
+word-break:break-word;
+}
+
+/* TABLE */
+.table{
+display:block;
+overflow-x:auto;
+white-space:nowrap;
+}
+
+/* CARD */
+.card-body{
+padding:18px;
+}
+
+}
+
+.app-header{
+background:white;
+padding:15px 20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+
+margin-bottom:24px;
+
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+
+position:relative;
+
+}
+
+/* =========================
+MOBILE FIX
+========================= */
+@media (max-width:768px){
+
+/* ==================== NAVBAR / APP HEADER ==================== */
+.app-header {
+    background: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;          /* <-- kunci utama: semua sejajar vertikal */
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;          /* semua anak sejajar tengah */
+    gap: 8px;
+}
+
+/* Hapus margin/padding yang bikin geser */
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    align-items: center;          /* <-- wajib ada ini */
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Toggle button */
+#sidebarToggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+}
+
+/* User dropdown — ini yang sering jadi penyebab tidak sejajar */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;          /* <-- pastikan ini ada */
+    gap: 8px;
+    text-decoration: none;
+    color: #2d3748;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.user-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;               /* jangan mengecil */
+}
+
+.dropdown-toggle span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;               /* hapus line-height besar yang bikin geser */
+    white-space: nowrap;
+}
+
+/* ==================== NOTIFIKASI DROPDOWN ==================== */
+.notification-dropdown {
+    position: relative;     /* parent harus relative */
+    display: flex;
+    align-items: center;
+}
+
+.notification-menu {
+    position: absolute;
+    top: calc(100% + 10px); /* tepat di bawah tombol */
+    right: 0;               /* rata kanan dengan tombol lonceng */
+    left: auto;             /* override kalau ada left: 0 */
+    
+    width: 280px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border: 1px solid #e2e8f0;
+    
+    z-index: 9999;
+    
+    display: none;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+}
+
+.notification-dropdown:hover .notification-menu,
+.notification-dropdown.show .notification-menu {
+    display: block;
+}
+
+/* header right */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* pastikan overflow tidak memotong dropdown */
+.header-right,
+.app-header {
+    overflow: visible !important;
+}

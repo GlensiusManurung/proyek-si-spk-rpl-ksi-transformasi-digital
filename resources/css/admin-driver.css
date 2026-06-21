@@ -1,0 +1,262 @@
+/* ============================================
+   DATA DRIVER - ADMINLTE PRO STYLE
+   ============================================ */
+
+/* Card AdminLTE */
+.card {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: none;
+    background: #fff;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+.card-header .card-tools {
+    float: right;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Button AdminLTE */
+.btn {
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #3c8dbc;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #367fa9;
+}
+
+.btn-warning {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background: #e08e0b;
+}
+
+.btn-danger {
+    background: #dd4b39;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #c13b2a;
+}
+
+.btn-success {
+    background: #00a65a;
+    border: none;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #008d4c;
+}
+
+.btn-info {
+    background: #00c0ef;
+    border: none;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #00acd6;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Driver Avatar */
+.driver-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #3c8dbc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Table AdminLTE */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #f9f9f9;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 12px;
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+}
+
+.table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* Badge AdminLTE */
+.badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-success {
+    background: #00a65a;
+    color: #fff;
+}
+
+.badge-danger {
+    background: #dd4b39;
+    color: #fff;
+}
+
+/* Alert AdminLTE */
+.alert {
+    border-radius: 3px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.alert-danger {
+    background: #f2dede;
+    color: #a94442;
+}
+
+/* DataTables AdminLTE */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-left: 8px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #3c8dbc;
+    color: white !important;
+    border: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #e5e5e5;
+    border: none;
+}
+
+/* Button Group */
+.btn-group-export {
+    display: flex;
+    gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-group-export {
+        flex-wrap: wrap;
+    }
+}

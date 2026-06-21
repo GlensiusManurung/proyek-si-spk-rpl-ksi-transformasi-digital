@@ -1,0 +1,249 @@
+/* ============================================
+   SAW (SPK) - ADMINLTE STYLE
+   ============================================ */
+
+/* Card */
+.card {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: none;
+    background: #fff;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table th {
+    background: #f9f9f9;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 12px;
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+}
+
+.table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* Input Nilai */
+.nilai-input {
+    width: 80px;
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.nilai-input:focus {
+    border-color: #3c8dbc;
+    box-shadow: 0 0 0 3px rgba(60, 141, 188, 0.1);
+}
+
+/* Alert */
+.alert {
+    border-radius: 3px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.alert-info {
+    background: #d9edf7;
+    color: #31708f;
+}
+
+.alert-secondary {
+    background: #f9f9f9;
+    color: #555;
+    border: 1px solid #e5e5e5;
+}
+
+/* Badge */
+.badge {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-success {
+    background: #00a65a;
+    color: white;
+}
+
+.badge-danger {
+    background: #dd4b39;
+    color: white;
+}
+
+.badge-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.badge-info {
+    background: #00c0ef;
+    color: white;
+}
+
+/* Background untuk jenis kriteria */
+.bg-benefit {
+    background-color: #dff0d8 !important;
+}
+
+.bg-cost {
+    background-color: #f2dede !important;
+}
+
+/* Trophy */
+.bi-trophy-fill {
+    color: #ffc107;
+}
+
+/* Table Success Row */
+.table-success {
+    background-color: #dff0d8 !important;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 4px;
+}
+
+.modal-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-footer {
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Button */
+.btn {
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: #3c8dbc;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #367fa9;
+}
+
+.btn-warning {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background: #e08e0b;
+}
+
+.btn-danger {
+    background: #dd4b39;
+    border: none;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #c13b2a;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+    }
+    
+    .nilai-input {
+        width: 70px;
+    }
+}
+
+/* DataTables */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-left: 8px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #3c8dbc;
+    color: white !important;
+    border: none;
+}

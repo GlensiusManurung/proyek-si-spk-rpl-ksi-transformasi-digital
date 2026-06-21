@@ -1,0 +1,345 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Tambahkan atau update bagian header ini */
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ini yang membuat semua konten di dalamnya ke tengah */
+    justify-content: center;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login-header img {
+    max-width: 150px; /* Sesuaikan ukuran logo di sini */
+    height: auto;
+    margin-bottom: 1rem;
+    display: block; /* Menghilangkan whitespace di bawah gambar */
+}
+
+/* Jika teks "OPTI ROUTE" adalah teks terpisah (bukan bagian dari gambar) */
+.login-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px; /* Memberikan kesan elegan seperti di gambar */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+}
+
+.login-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.login-actions a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* Container Utama */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pembungkus Logo */
+.logo {
+    display: flex;
+    justify-content: center; /* Meratakan gambar secara horizontal */
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.logo img {
+    /* Menghapus inline style dari HTML ke sini agar lebih rapi */
+    max-width: 180px; 
+    height: auto;
+    display: block;
+}
+
+/* Styling Input Group agar sejajar dengan desain gambar */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Tombol Login Biru */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb; /* Biru cerah sesuai gambar */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #1d4ed8;
+}
+
+/* Link Bawah */
+.login-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-actions a {
+    font-size: 12px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.login-actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   RESPONSIVE ONLY - TANPA MENGUBAH UI
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 380px;
+        padding: 2rem 1.5rem;
+    }
+    .login-header h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile Large (426px - 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+    
+    .login-container {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+    
+    .login-header img {
+        max-width: 130px;
+    }
+    
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 1rem;
+    }
+    
+    .btn-login {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .login-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 16px;
+    }
+    
+    .login-actions a {
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile Small (320px - 425px) */
+@media (max-width: 425px) {
+    body {
+        padding: 12px;
+    }
+    
+    .login-container {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .login-header img {
+        max-width: 110px;
+    }
+    
+    .login-header h1 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-login {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .login-actions a {
+        font-size: 0.65rem;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+    
+    .login-container {
+        max-width: 450px;
+        padding: 1rem 1.5rem;
+    }
+    
+    .login-header img {
+        max-width: 80px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .login-header {
+        margin-bottom: 1rem;
+    }
+    
+    .login-header h1 {
+        font-size: 1rem;
+    }
+    
+    .input-group {
+        margin-bottom: 0.5rem;
+    }
+    
+    .input-group input {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-login {
+        padding: 8px;
+        font-size: 0.85rem;
+        margin-top: 4px;
+    }
+    
+    .login-actions {
+        margin-top: 0.8rem;
+    }
+}
