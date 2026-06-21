@@ -15,18 +15,24 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
-
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN if [ -f package.json ]; then \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+# Install Node & build Vite assets
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
     npm install && \
-    npm run build; \
-    fi
+    npm run build
+
+# Laravel setup
+RUN cp .env.example .env || true
+RUN php artisan key:generate --force
+RUN chmod -R 775 storage bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache 2>/dev/null || true
 
 EXPOSE 10000
-
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache && \
+    php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
