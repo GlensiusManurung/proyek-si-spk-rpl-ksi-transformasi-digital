@@ -1,9 +1,16 @@
-
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
-    git unzip curl libzip-dev zip \
-    && docker-php-ext-install pdo pdo_mysql zip
+    git \
+    unzip \
+    curl \
+    zip \
+    libzip-dev \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+ && docker-php-ext-configure gd --with-freetype --with-jpeg \
+ && docker-php-ext-install gd pdo pdo_mysql zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -13,10 +20,12 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN if [ -f package.json ]; then curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+RUN if [ -f package.json ]; then \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
     npm install && \
-    npm run build; fi
+    npm run build; \
+    fi
 
 EXPOSE 10000
 
