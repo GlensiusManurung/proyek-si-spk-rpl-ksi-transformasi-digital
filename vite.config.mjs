@@ -56,7 +56,7 @@ export default defineConfig({
         'resources/js/chat-superadmin.js',
         'resources/js/driver.js',
         'resources/js/superadmin.js',
-          'public/css/adminlte.css',
+        'public/css/adminlte.css',
         'public/js/adminlte.js',
       ],
       refresh: true,
