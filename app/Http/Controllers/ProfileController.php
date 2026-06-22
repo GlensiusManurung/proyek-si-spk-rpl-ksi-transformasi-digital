@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
 
 class ProfileController extends Controller
 {
@@ -13,16 +14,23 @@ class ProfileController extends Controller
     private function uploadAvatar($request, $user)
     {
         if ($request->hasFile('avatar')) {
-            if ($user->avatar && !str_contains($user->avatar, 'googleusercontent.com') && str_contains($user->avatar, 'cloudinary')) {
-                $publicId = 'profile_photos/' . pathinfo(parse_url($user->avatar, PHP_URL_PATH), PATHINFO_FILENAME);
-                Cloudinary::destroy($publicId);
-            }
+            $cloudinary = new Cloudinary(
+                Configuration::instance([
+                    'cloud' => [
+                        'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
+                        'api_key'    => env('CLOUDINARY_API_KEY'),
+                        'api_secret' => env('CLOUDINARY_API_SECRET'),
+                    ],
+                    'url' => ['secure' => true]
+                ])
+            );
 
-            $result = Cloudinary::upload($request->file('avatar')->getRealPath(), [
-                'folder' => 'profile_photos',
-            ]);
+            $result = $cloudinary->uploadApi()->upload(
+                $request->file('avatar')->getRealPath(),
+                ['folder' => 'profile_photos']
+            );
 
-            $user->avatar = $result->getSecurePath();
+            $user->avatar = $result['secure_url'];
         }
 
         return $user;
@@ -30,16 +38,8 @@ class ProfileController extends Controller
 
     private function deleteAvatar($user)
     {
-        if ($user->avatar && !str_contains($user->avatar, 'googleusercontent.com')) {
-            if (str_contains($user->avatar, 'cloudinary')) {
-                $publicId = 'profile_photos/' . pathinfo(parse_url($user->avatar, PHP_URL_PATH), PATHINFO_FILENAME);
-                Cloudinary::destroy($publicId);
-            }
-        }
-
         $user->avatar = null;
         $user->save();
-
         return back()->with('success', 'Foto profile berhasil dihapus!');
     }
 
