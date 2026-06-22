@@ -4,10 +4,10 @@ namespace App\Mail;
 
 use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mailer\SentMessage;
-use Brevo\Client\Api\TransactionalEmailsApi;
-use Brevo\Client\Model\SendSmtpEmail;
-use Brevo\Client\Model\SendSmtpEmailSender;
-use Brevo\Client\Model\SendSmtpEmailTo;
+use Brevo\Api\TransactionalEmailsApi;
+use Brevo\Model\SendSmtpEmail;
+use Brevo\Model\SendSmtpEmailSender;
+use Brevo\Model\SendSmtpEmailTo;
 
 class BrevoTransport extends AbstractTransport
 {

@@ -5,8 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Mail\MailManager;
-use Brevo\Client\Configuration;
-use Brevo\Client\Api\TransactionalEmailsApi;
+use Brevo\Configuration;
+use Brevo\Api\TransactionalEmailsApi;
 use GuzzleHttp\Client;
 use App\Mail\BrevoTransport;
 
