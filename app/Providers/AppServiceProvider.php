@@ -5,8 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Mail\MailManager;
-use Brevo\Core\Configuration;
-use Brevo\TransactionalEmails\Api\TransactionalEmailsApi;
+use Brevo\Core\Client\Configuration;
+use Brevo\TransactionalEmails\TransactionalEmailsClient;
 use GuzzleHttp\Client;
 use App\Mail\BrevoTransport;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             $configuration = Configuration::getDefaultConfiguration()
                 ->setApiKey('api-key', $config['api_key']);
             
-            $apiInstance = new TransactionalEmailsApi(
+            $apiInstance = new TransactionalEmailsClient(
                 new Client(),
                 $configuration
             );

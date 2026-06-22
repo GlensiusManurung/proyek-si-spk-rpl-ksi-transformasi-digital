@@ -4,16 +4,16 @@ namespace App\Mail;
 
 use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mailer\SentMessage;
-use Brevo\TransactionalEmails\Api\TransactionalEmailsApi;
-use Brevo\TransactionalEmails\Model\SendSmtpEmail;
-use Brevo\TransactionalEmails\Model\SendSmtpEmailSender;
-use Brevo\TransactionalEmails\Model\SendSmtpEmailTo;
+use Brevo\TransactionalEmails\TransactionalEmailsClient;
+use Brevo\TransactionalEmails\Types\SendSmtpEmail;
+use Brevo\TransactionalEmails\Types\SendSmtpEmailSender;
+use Brevo\TransactionalEmails\Types\SendSmtpEmailTo;
 
 class BrevoTransport extends AbstractTransport
 {
     protected $apiInstance;
 
-    public function __construct(TransactionalEmailsApi $apiInstance)
+    public function __construct(TransactionalEmailsClient $apiInstance)
     {
         $this->apiInstance = $apiInstance;
         parent::__construct();
