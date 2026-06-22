@@ -4,18 +4,15 @@ namespace App\Mail;
 
 use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mailer\SentMessage;
-use Brevo\TransactionalEmails\TransactionalEmailsClient;
-use Brevo\TransactionalEmails\Types\SendSmtpEmail;
-use Brevo\TransactionalEmails\Types\SendSmtpEmailSender;
-use Brevo\TransactionalEmails\Types\SendSmtpEmailTo;
+use Illuminate\Support\Facades\Http;
 
 class BrevoTransport extends AbstractTransport
 {
-    protected $apiInstance;
+    protected $apiKey;
 
-    public function __construct(TransactionalEmailsClient $apiInstance)
+    public function __construct($apiKey)
     {
-        $this->apiInstance = $apiInstance;
+        $this->apiKey = $apiKey;
         parent::__construct();
     }
 
@@ -23,22 +20,31 @@ class BrevoTransport extends AbstractTransport
     {
         $email = $message->getOriginalMessage();
         
-        $sendSmtpEmail = new SendSmtpEmail();
-        $sendSmtpEmail->setSubject($email->getSubject());
-        $sendSmtpEmail->setHtmlContent($email->getHtmlBody() ?: $email->getTextBody());
-        
-        $sender = new SendSmtpEmailSender();
-        $sender->setEmail(env('MAIL_FROM_ADDRESS', 'af87e1001@smtp-brevo.com'));
-        $sender->setName(env('MAIL_FROM_NAME', 'OPR Optiroute'));
-        $sendSmtpEmail->setSender($sender);
-        
+        // Ambil data email
         $to = [];
         foreach ($email->getTo() as $address) {
-            $to[] = (new SendSmtpEmailTo())->setEmail($address->getAddress())->setName($address->getName() ?: '');
+            $to[] = [
+                'email' => $address->getAddress(),
+                'name' => $address->getName() ?: ''
+            ];
         }
-        $sendSmtpEmail->setTo($to);
-        
-        $this->apiInstance->sendTransacEmail($sendSmtpEmail);
+
+        $response = Http::withHeaders([
+            'api-key' => $this->apiKey,
+            'Content-Type' => 'application/json',
+        ])->post('https://api.brevo.com/v3/smtp/email', [
+            'sender' => [
+                'email' => env('MAIL_FROM_ADDRESS', 'af87e1001@smtp-brevo.com'),
+                'name' => env('MAIL_FROM_NAME', 'OPR Optiroute')
+            ],
+            'to' => $to,
+            'subject' => $email->getSubject(),
+            'htmlContent' => $email->getHtmlBody() ?: $email->getTextBody(),
+        ]);
+
+        if (!$response->successful()) {
+            throw new \Exception('Brevo API error: ' . $response->body());
+        }
     }
 
     public function __toString(): string
