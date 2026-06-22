@@ -557,16 +557,13 @@
                 <div class="user-dropdown" id="userDropdown">
                     <div class="user-dropdown-toggle" data-toggle="user-dropdown">
                         <div class="position-relative">
-                            @if($user->avatar)
+                           @if($user->avatar)
     <img src="{{ $user->avatar }}" class="profile-photo" alt="Profile Photo">
 @else
     <div class="default-avatar">
         <i class="bi bi-person-circle"></i>
     </div>
 @endif
-                            @else
-                                <i class="bi bi-person-circle" style="font-size: 1.8rem;"></i>
-                            @endif
                             <span class="status-dot-navbar {{ Auth::user()->is_online ? 'online' : 'offline' }}"></span>
                         </div>
                         <span class="user-name">{{ Auth::user()->nama }}</span>
