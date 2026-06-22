@@ -1,7 +1,14 @@
 <?php
+
 namespace App\Providers;
+
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Mail\MailManager;
+use Brevo\Client\Configuration;
+use Brevo\Client\Api\TransactionalEmailsApi;
+use GuzzleHttp\Client;
+use App\Mail\BrevoTransport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,5 +22,17 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
+
+        $this->app->make(MailManager::class)->extend('brevo', function ($config) {
+            $configuration = Configuration::getDefaultConfiguration()
+                ->setApiKey('api-key', $config['api_key']);
+            
+            $apiInstance = new TransactionalEmailsApi(
+                new Client(),
+                $configuration
+            );
+            
+            return new BrevoTransport($apiInstance);
+        });
     }
 }
