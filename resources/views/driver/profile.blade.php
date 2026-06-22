@@ -21,15 +21,13 @@
                     <!-- Profile Photo -->
                     <div class="text-center mb-4">
                         <div class="profile-photo-wrapper">
-                            @if($user->avatar && !str_contains($user->avatar, 'googleusercontent.com'))
-                                <img src="{{ Storage::url($user->avatar) }}" class="profile-photo" alt="Profile Photo">
-                            @elseif($user->avatar)
-                                <img src="{{ $user->avatar }}" class="profile-photo" alt="Profile Photo">
-                            @else
-                                <div class="default-avatar">
-                                    <i class="bi bi-person-circle"></i>
-                                </div>
-                            @endif
+                            @if($user->avatar)
+    <img src="{{ $user->avatar }}" class="profile-photo" alt="Profile Photo">
+@else
+    <div class="default-avatar">
+        <i class="bi bi-person-circle"></i>
+    </div>
+@endif
                         </div>
                         
                         <!-- Tombol Hapus Foto -->
